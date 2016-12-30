@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.search(params.fetch(:q, "*"))
+    query = params[:q].presence || "*"
+    @questions = Question.search(query)
   end
 
   # GET /questions/1
