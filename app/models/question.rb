@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
   acts_as_taggable
 
-  searchkick
+  searchkick text_start: [:title]
 end
